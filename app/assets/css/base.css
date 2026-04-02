@@ -1,0 +1,23 @@
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+
+    @media (width < 48rem) {
+      scroll-padding-block-start: var(--spacing-nav);
+    }
+  }
+
+  *:focus-visible {
+    outline: var(--border-width) solid
+      var(--color-focus-background, var(--color-black));
+    background: var(--color-focus-background, var(--color-black));
+    color: var(--color-focus-foreground, var(--color-white));
+  }
+
+  ::selection {
+    color: var(--color-selection-foreground, var(--color-white));
+    background-color: var(--color-selection-background, var(--color-black));
+  }
+}

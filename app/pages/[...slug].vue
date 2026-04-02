@@ -8,7 +8,7 @@ const { slug } = useRoute().params
 const availableLanguages = ['en']
 const language = availableLanguages.includes(slug[0]) ? slug[0] : undefined;
 if (language) slug.shift()
-const path = slug && slug.length > 0 ? slug.join('/') : 'home'
+const path = slug && slug.length > 0 && slug[0] ? slug.join('/') : 'home'
 const version = useEnvironment()
 const { story } = await useAsyncStoryblok(path, { api: { version, language } })
 const page = story?.value?.content
