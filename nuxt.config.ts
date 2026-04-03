@@ -16,6 +16,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/image',
+    '@vueuse/nuxt',
     ['@storyblok/nuxt', {
       accessToken: process.env.STORYBLOK_DELIVERY_API_TOKEN,
       apiOptions: {

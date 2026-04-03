@@ -20,4 +20,9 @@
     color: var(--color-selection-foreground, var(--color-white));
     background-color: var(--color-selection-background, var(--color-black));
   }
+
+  .focus-light:focus-visible {
+    --color-focus-background: var(--color-white);
+    --color-focus-foreground: var(--color-black);
+  }
 }

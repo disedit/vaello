@@ -3,7 +3,7 @@ const { languages, currentLanguage, switchLanguage } = useLanguage()
 </script>
 
 <template>
-  <ul aria-label="Languages">
+  <ul aria-label="Languages" class="text-sm flex">
     <li
       v-for="language in languages"
       :key="language.code"
@@ -11,7 +11,7 @@ const { languages, currentLanguage, switchLanguage } = useLanguage()
       <NuxtLink
         :to="switchLanguage(language.code)"
         :class="{ 'font-bold': language.code === currentLanguage }"
-        class="uppercase"
+        class="uppercase to-underlined"
       >
         {{ language.code }}
       </NuxtLink>
@@ -19,6 +19,9 @@ const { languages, currentLanguage, switchLanguage } = useLanguage()
   </ul>
 </template>
 
-<style>
-
+<style scoped>
+li:not(:last-child)::after {
+  content: '/';
+  margin-inline: .25em;
+}
 </style>
