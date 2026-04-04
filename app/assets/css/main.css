@@ -5,6 +5,7 @@
   --font-serif: Louize, Georgia, serif;
   --color-black: #000;
   --color-white: #fff;
+  --color-gray-50: #f2f2f2;
   --color-gray-100: #e3e4dd;
   --color-gray-200: #dadada;
   --color-beige: #ebebe3;
@@ -51,7 +52,14 @@
   --color-stone-*: initial;
 }
 
+@media (width < 48rem) {
+  :root {
+    --spacing-site: 1rem;
+  }
+}
+
 @import "./fonts.css";
 @import "./base.css";
+@import "./colors.css";
 @import "./utils.css";
 @import "./transitions.css";

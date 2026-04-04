@@ -1,0 +1,29 @@
+@layer utilities {
+  .logo-white {
+    --logo-color: var(--color-white);
+  }
+
+  .text-color-white {
+    --text-color: var(--color-white);
+  }
+
+  .text-color-black {
+    --text-color: var(--color-black);
+  }
+
+  .background-color-white {
+    --background-color: var(--color-white);
+  }
+
+  .background-color-black {
+    --background-color: var(--color-black);
+  }
+
+  .background-color-beige {
+    --background-color: var(--color-beige);
+  }
+
+  .background-color-gray {
+    --background-color: var(--color-gray-50);
+  }
+}
