@@ -1,5 +1,11 @@
 <script setup>
-defineProps({ blok: Object })
+const props = defineProps({ blok: Object })
+
+useHead({
+  bodyAttrs: {
+    class: props.blok.logo_color === 'white' ? 'logo-white' : 'logo-black',
+  },
+})
 </script>
 
 <template>

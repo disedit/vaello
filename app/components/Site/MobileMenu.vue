@@ -54,8 +54,8 @@ function onLeaveCancelled() {
     @leave="onLeave"
     @leave-cancelled="onLeaveCancelled"
   >
-    <div v-if="show" class="lg:hidden bg-white pt-nav fixed z-900 top-0 left-0 right-0">
-      <ul aria-label="Main menu" class="text-sm flex flex-col top-5 border-t border-gray-100">
+    <div v-if="show" class="lg:hidden bg-white pt-15 fixed z-900 top-0 left-0 right-0">
+      <ul aria-label="Main menu" class="text-xs flex flex-col top-5 border-t border-gray-100">
         <li
           v-for="item in global?.menu"
           :key="item._uid"

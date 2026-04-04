@@ -10,6 +10,7 @@ const showNavbar = ref(true)
 const lastScrollPosition = ref(0)
 const menuActive = ref(false)
 const mobileMenuOpen = ref(false)
+const threshold = 100
 
 watch(y, (currentScrollPosition) => {
   if (currentScrollPosition < 0 || Math.abs(currentScrollPosition - lastScrollPosition.value) < 60) {
@@ -21,6 +22,10 @@ watch(y, (currentScrollPosition) => {
 
 const navCanHide = computed(() => {
   return !isMobile.value && !menuActive.value
+})
+
+const isScrolled = computed(() => {
+  return y.value > threshold
 })
 
 const toggleMobileMenu = () => {
@@ -35,16 +40,24 @@ const closeMobileMenu = () => {
 <template>
   <nav
     class="fixed top-0 left-0 right-0 p-site flex flex-col lg:flex-row lg:items-center lg:justify-between gap-site z-1000 transition duration-500 ease-out"
-    :class="{ '-translate-y-full': !showNavbar && navCanHide, 'bg-white': y > 100 }"
+    :class="{ '-translate-y-full': !showNavbar && navCanHide, 'bg-white': isScrolled }"
   >
-    <div class="relative z-1100 flex items-center gap-site justify-between">
+    <div
+      class="relative z-1100 flex items-center gap-site justify-between transition-colors duration-500 ease-out"
+      :class="{ 'text-(--logo-color)': !isScrolled && !mobileMenuOpen }"
+    >
       <NuxtLink
         :to="currentLanguage === 'en' ? '/en' : '/'"
-        class="to-underlined text-basemd"
+        class="to-underlined text-base lg:text-basemd"
       >
         VAELLO
       </NuxtLink>
-      <button @click="toggleMobileMenu" class="flex lg:hidden items-center justify-center" aria-label="Toggle menu" title="Menu">
+      <button
+        @click="toggleMobileMenu"
+        class="flex lg:hidden items-center justify-center"
+        aria-label="Toggle menu"
+        title="Menu"
+      >
         <IconsMenu v-if="!mobileMenuOpen" class="h-5 w-5" />
         <IconsClose v-else class="h-4 w-4" />
       </button>

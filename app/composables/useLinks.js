@@ -5,7 +5,12 @@ export const useLinks = () => {
       let prefix = "/";
       if (typeof link === "object") {
         cachedUrl = link.cached_url;
-        prefix = link.linktype === "url" ? "" : "/";
+        prefix =
+          link.linktype === "url"
+            ? ""
+            : link.linktype === "email"
+              ? "mailto:"
+              : "/";
       } else {
         cachedUrl = link;
       }
