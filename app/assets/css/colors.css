@@ -3,6 +3,10 @@
     --logo-color: var(--color-white);
   }
 
+  .logo-black {
+    --logo-color: var(--color-black);
+  }
+
   .text-color-white {
     --text-color: var(--color-white);
   }
@@ -25,5 +29,15 @@
 
   .background-color-gray {
     --background-color: var(--color-gray-50);
+  }
+
+  @media (width >= 48rem) {
+    .lg\:logo-white {
+      --logo-color: var(--color-white);
+    }
+
+    .lg\:logo-black {
+      --logo-color: var(--color-black);
+    }
   }
 }

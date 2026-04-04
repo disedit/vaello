@@ -1,6 +1,11 @@
 <script setup>
 const props = defineProps({ blok: Object })
 const items = props.blok.items.length
+const sizes = {
+  2: '1000px',
+  3: '800px',
+  'default': '400px',
+}
 </script>
 
 <template>
@@ -13,9 +18,10 @@ const items = props.blok.items.length
       'grid-cols-2 lg:grid-cols-4': items >= 4,
     }">
     <StoryblokComponent
-      v-for="(component, index) in blok.items"
+      v-for="component in blok.items"
       :key="component._uid"
       :blok="component"
+      :sizes="items >= 4 ? sizes.default : sizes[items]"
     />
   </section>
 </template>

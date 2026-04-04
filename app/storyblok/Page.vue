@@ -3,13 +3,19 @@ const props = defineProps({ blok: Object })
 
 useHead({
   bodyAttrs: {
-    class: props.blok.logo_color === 'white' ? 'logo-white' : 'logo-black',
+    class: `logo-${props.blok.logo_color_mobile} lg:logo-${props.blok.logo_color}`,
   },
 })
 </script>
 
 <template>
-  <main v-editable="blok" class="min-h-svh pb-1">
+  <main
+    v-editable="blok"
+    class="min-h-svh pb-1"
+    :class="{
+      'lg:pt-nav': blok.nav_padding,
+      'pt-nav': blok.nav_padding_mobile
+    }">
     <StoryblokComponent
       v-for="component in blok.body"
       :key="component._uid"

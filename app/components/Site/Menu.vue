@@ -106,6 +106,7 @@ function onLeaveCancelled() {
                 :to="internalLink(subitem.link)"
                 :target="target(subitem.link)"
                 class="uppercase"
+                @click="unsetSubmenu"
               >
                 <div class="mb-1">{{ subitem.label }}</div>
                 <NuxtImg
