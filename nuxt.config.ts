@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/image',
     '@vueuse/nuxt',
+    '@nuxtjs/i18n',
     ['@storyblok/nuxt', {
       accessToken: process.env.STORYBLOK_DELIVERY_API_TOKEN,
       apiOptions: {
@@ -45,4 +46,12 @@ export default defineNuxtConfig({
       baseURL: 'https://a.storyblok.com'
     }
   },
+
+  i18n: {
+    defaultLocale: 'es',
+    locales: [
+      { code: 'es', name: 'Español' },
+      { code: 'en', name: 'English' }
+    ]
+  }
 })

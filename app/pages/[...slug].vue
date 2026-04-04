@@ -4,13 +4,11 @@ const settings = await useSettings()
 const global = settings?.value?.data?.story?.content
 
 /* Load page */
+const { locale } = useI18n()
 const { slug } = useRoute().params
-const availableLanguages = ['en']
-const language = availableLanguages.includes(slug[0]) ? slug[0] : undefined;
-if (language) slug.shift()
 const path = slug && slug.length > 0 && slug[0] ? slug.join('/') : 'home'
 const version = useEnvironment()
-const { story } = await useAsyncStoryblok(path, { api: { version, language } })
+const { story } = await useAsyncStoryblok(path, { api: { version, language: locale.value } })
 const page = story?.value?.content
 
 if (!story.value) {

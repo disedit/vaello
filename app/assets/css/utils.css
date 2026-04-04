@@ -5,7 +5,7 @@
   .links-underlined a,
   .span-to-underlined:hover span,
   .link-to-underlined:hover .link,
-  .prose a:hover {
+  .prose a {
     text-decoration: underline;
     text-underline-offset: 0.25em;
     text-decoration-thickness: 1px;
@@ -22,6 +22,10 @@
 
     &.indent-first-paragraph p:first-child {
       text-indent: 4em;
+    }
+
+    a:hover {
+      opacity: 0.6;
     }
 
     ul,
@@ -51,7 +55,7 @@
 
     h2 {
       font-size: 1.5em;
-      margin-block-end: 0.25em;
+      margin-block-end: 0.5em;
 
       &:not(:first-child) {
         margin-block-start: 1em;
@@ -61,7 +65,7 @@
     h3 {
       font-size: 1.25em;
       margin-block-start: 1em;
-      margin-block-end: 0.25em;
+      margin-block-end: 0.5em;
       font-weight: bold;
     }
 

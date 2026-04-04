@@ -1,14 +1,14 @@
 export const useSettings = async () => {
   const nuxtApp = useNuxtApp();
   const version = useEnvironment();
-  const { currentLanguage } = useLanguage();
+  const { locale } = useI18n();
   const storyblokApi = useStoryblokApi();
   const { data: settings } = await useAsyncData(
     "settings",
     async () => {
       return await storyblokApi.get("cdn/stories/settings", {
         version,
-        language: currentLanguage.value,
+        language: locale.value,
         resolve_links: "url",
       });
     },
@@ -19,7 +19,7 @@ export const useSettings = async () => {
           ? nuxtApp.payload.data[key]
           : nuxtApp.static.data[key];
       },
-      watch: [currentLanguage],
+      watch: [locale],
     },
   );
 

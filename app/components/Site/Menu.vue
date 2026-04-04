@@ -85,6 +85,7 @@ function onLeaveCancelled() {
         :to="internalLink(item.link)"
         :target="target(item.link)"
         class="hover:italic relative z-1100 p-2"
+        @click="backdrop = false"
       >
         {{ item.label }}
       </NuxtLink>

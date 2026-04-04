@@ -20,14 +20,29 @@
 
 .menu-enter-active,
 .menu-leave-active {
-  transition: height 0.5s ease;
-  interpolate-size: allow-keywords;
-  height: auto;
+  transition: max-height 0.5s ease;
+  max-height: 60vh;
   overflow: hidden;
 }
 
 .menu-enter-from,
 .menu-leave-to {
-  height: 0;
+  max-height: 0;
   overflow: hidden;
+}
+
+@supports (interpolate-size: allow-keywords) {
+  .menu-enter-active,
+  .menu-leave-active {
+    transition: height 0.5s ease;
+    interpolate-size: allow-keywords;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .menu-enter-from,
+  .menu-leave-to {
+    height: 0;
+    overflow: hidden;
+  }
 }
