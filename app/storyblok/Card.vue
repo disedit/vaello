@@ -39,7 +39,7 @@ const tag = computed(() => props.blok.link ? resolveComponent('NuxtLink') : 'art
     </div>
     <div
       v-if="blok.heading || blok.description"
-      class="flex-col gap-2 text-xs lg:text-sm"
+      class="flex-col gap-2 text-xs lg:text-sm 2xl:text-smbase"
       :class="{
         'hidden lg:flex mb-6': hideHeadingOnMobile,
         'flex p-8 lg:p-0': !hideHeadingOnMobile

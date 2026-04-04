@@ -19,7 +19,7 @@ const sizes = {
       'grid-cols-2': blok.max_columns_mobile == 2,
       'grid-cols-3': blok.max_columns_mobile == 3,
       'p-site': blok.padding_on_mobile,
-      'py-2 lg:py-2': !blok.padding_on_mobile,
+      'py-2 lg:py-4': !blok.padding_on_mobile,
     }">
     <StoryblokComponent
       v-for="component in blok.items"

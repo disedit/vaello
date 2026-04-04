@@ -58,6 +58,24 @@
   }
 }
 
+@media (width > 96rem) {
+  :root {
+    --text-xxxs: 0.625rem;
+    --text-xxs: 0.7rem;
+    --text-xs: 0.75rem;
+    --text-sm: 0.85rem;
+    --text-smbase: 0.95rem;
+    --text-base: 1.1rem;
+    --text-basemd: 1.2rem;
+    --text-md: 1.35rem;
+    --text-mdlg: 1.75rem;
+    --text-lg: 2.25rem;
+    --text-xl: 3rem;
+    --text-2xl: 3.5rem;
+    --text-3xl: 4rem;
+  }
+}
+
 @import "./fonts.css";
 @import "./base.css";
 @import "./colors.css";
