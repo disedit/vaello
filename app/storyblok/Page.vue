@@ -14,7 +14,8 @@ useHead({
     class="min-h-svh pb-1"
     :class="{
       'lg:pt-nav': blok.nav_padding,
-      'pt-nav': blok.nav_padding_mobile
+      'pt-nav': blok.nav_padding_mobile,
+      'lg:pt-0': !blok.nav_padding,
     }">
     <h1 class="sr-only">{{ blok.title }}</h1>
     <StoryblokComponent
