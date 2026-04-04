@@ -48,7 +48,8 @@ const closeMobileMenu = () => {
     >
       <NuxtLink
         :to="currentLanguage === 'en' ? '/en' : '/'"
-        class="to-underlined text-base lg:text-basemd"
+        class="text-base lg:text-basemd"
+        @click="closeMobileMenu"
       >
         VAELLO
       </NuxtLink>

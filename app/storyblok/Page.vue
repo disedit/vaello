@@ -16,6 +16,7 @@ useHead({
       'lg:pt-nav': blok.nav_padding,
       'pt-nav': blok.nav_padding_mobile
     }">
+    <h1 class="sr-only">{{ blok.title }}</h1>
     <StoryblokComponent
       v-for="component in blok.body"
       :key="component._uid"

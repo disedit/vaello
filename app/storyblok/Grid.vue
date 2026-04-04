@@ -11,11 +11,15 @@ const sizes = {
 <template>
   <section
     v-editable="blok"
-    class="grid gap-4 py-4 lg:px-4"
+    class="grid gap-2 lg:gap-4 lg:px-4"
     :class="{
-      'grid-cols-2': items === 2,
-      'grid-cols-2 lg:grid-cols-3': items === 3,
-      'grid-cols-2 lg:grid-cols-4': items >= 4,
+      'lg:grid-cols-2': blok.max_columns == 2,
+      'lg:grid-cols-3': blok.max_columns == 3,
+      'lg:grid-cols-4': blok.max_columns == 4,
+      'grid-cols-2': blok.max_columns_mobile == 2,
+      'grid-cols-3': blok.max_columns_mobile == 3,
+      'p-site': blok.padding_on_mobile,
+      'py-2 lg:py-2': !blok.padding_on_mobile,
     }">
     <StoryblokComponent
       v-for="component in blok.items"
