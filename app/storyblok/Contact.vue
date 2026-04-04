@@ -3,25 +3,25 @@ defineProps({ blok: Object })
 </script>
 
 <template>
-  <section v-editable="blok" class="contact flex min-h-[calc(100svh-var(--spacing-nav))] items-center justify-center p-site">
-    <div>
-      <div class="grid md:grid-cols-2 max-w-236 mx-auto gap-12">
-        <UtilsRichText :content="blok.column1" spaced-paragraphs class="links-underlined text-sm lg:text-smbase leading-tight" />
-        <UtilsRichText :content="blok.column2" spaced-paragraphs class="links-underlined text-sm lg:text-smbase leading-tight" />
+  <section v-editable="blok" class="contact flex min-h-[calc(100svh-var(--spacing-nav)-4rem)] items-center justify-center p-site">
+    <div class="px-11 lg:px-0">
+      <div class="grid md:grid-cols-2 max-w-236 mx-auto gap-18 lg:gap-12">
+        <UtilsRichText :content="blok.column1" spaced-paragraphs class="links-underlined text-xs lg:text-smbase leading-tight" />
+        <UtilsRichText :content="blok.column2" spaced-paragraphs class="links-underlined text-xs lg:text-smbase leading-tight" />
       </div>
-      <div class="flex flex-wrap justify-center gap-11 mt-32 text-sm">
-        <a :href="`tel:${blok.tel}`" class="flex items-center gap-2 border border-gray-200 px-7">
+      <div class="grid grid-cols-2 lg:flex lg:flex-wrap lg:justify-center gap-4 lg:gap-11 mt-32 text-xxxs lg:text-sm">
+        <a :href="`tel:${blok.tel}`" class="flex items-center gap-1 border border-gray-200 px-3 lg:px-7 py-1 h-8 lg:h-10 row-1 col-1 w-fit">
           <strong>ES</strong> {{ blok.tel_nice }}
         </a>
-        <a :href="blok.instagram" class="flex items-center gap-2 border border-gray-200 px-7 font-bold">
-          <IconsInstagram class="h-[3em] w-auto" />
-          Instagram``
+        <a :href="blok.instagram" class="flex items-center gap-2 border border-gray-200 px-3 lg:px-7 font-bold h-8 lg:h-10 row-1 col-2 w-fit">
+          <IconsInstagram class="h-[2.5em] lg:h-[3em] w-auto" />
+          Instagram
         </a>
-        <a :href="`https://wa.me/${blok.whatsapp}`" class="flex items-center gap-2 border border-gray-200 px-7 font-bold">
-          <IconsWhatsapp class="h-[3em] w-auto" />
+        <a :href="`https://wa.me/${blok.whatsapp}`" class="flex items-center gap-2 border border-gray-200 px-3 lg:px-7 font-bold h-8 lg:h-10 row-2 col-2 w-fit">
+          <IconsWhatsapp class="h-[2.5em] lg:h-[3em] w-auto" />
           Whatsapp
         </a>
-        <a :href="`mailto:${blok.email}`" class="flex items-center gap-2 border border-gray-200 px-7">
+        <a :href="`mailto:${blok.email}`" class="flex items-center gap-2 border border-gray-200 px-3 lg:px-7 h-8 lg:h-10 row-2 col-1 w-fit">
           {{ blok.email_text }}
         </a>
       </div>

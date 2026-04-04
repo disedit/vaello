@@ -8,7 +8,10 @@ const props = defineProps({ blok: Object })
       :media="blok.media"
       sizes="1500px"
       class="w-full"
-      :class="{ 'h-svh object-cover': blok.viewport_height }"
+      :class="{
+        'h-svh object-cover': blok.viewport_height,
+        'grayscale': blok.grayscale,
+      }"
     />
   </section>
 </template>

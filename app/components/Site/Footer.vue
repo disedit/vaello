@@ -16,7 +16,7 @@ const { internalLink, target } = useLinks()
               :target="target(item.link)"
               class="block"
               :class="{
-                'border border-gray-100 text-center p-2 mt-4': item.link.linktype === 'email',
+                'text-xxxs lg:text-smbase border border-gray-100 text-center p-2 mt-4': item.link.linktype === 'email',
                 'to-underlined py-px lg:py-0.5': item.link.linktype !== 'email'
               }"
             >

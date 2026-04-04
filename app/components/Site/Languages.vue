@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+const emit = defineEmits(['click'])
 const { languages, currentLanguage, switchLanguage } = useLanguage()
 </script>
 
@@ -12,6 +13,7 @@ const { languages, currentLanguage, switchLanguage } = useLanguage()
         :to="switchLanguage(language.code)"
         :class="{ 'font-bold': language.code === currentLanguage }"
         class="uppercase to-underlined"
+        @click="emit('click')"
       >
         {{ language.code }}
       </NuxtLink>

@@ -1,6 +1,8 @@
 <script setup>
 defineProps({ show: Boolean })
 
+const emit = defineEmits(['close'])
+
 const settings = await useSettings()
 const global = settings?.value?.data?.story?.content
 const { internalLink, target } = useLinks()
@@ -75,6 +77,7 @@ function onLeaveCancelled() {
             :to="internalLink(item.link)"
             :target="target(item.link)"
             class="p-site flex"
+            @click="emit('close')"
           >
             {{ item.label }}
           </NuxtLink>
@@ -89,6 +92,7 @@ function onLeaveCancelled() {
                   :to="internalLink(subitem.link)"
                   :target="target(subitem.link)"
                   class="uppercase flex p-site"
+                  @click="emit('close')"
                 >
                   {{ subitem.label }}
                 </NuxtLink>
@@ -98,7 +102,7 @@ function onLeaveCancelled() {
         </li>
       </ul>
       <div class="p-site flex justify-end">
-        <SiteLanguages />
+        <SiteLanguages @click="emit('close')" />
       </div>
     </div>
   </Transition>

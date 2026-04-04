@@ -62,7 +62,7 @@ const closeMobileMenu = () => {
         <IconsClose v-else class="h-4 w-4" />
       </button>
     </div>
-    <SiteMobileMenu :show="mobileMenuOpen" />
+    <SiteMobileMenu :show="mobileMenuOpen" @close="toggleMobileMenu" />
     <div class="hidden lg:flex items-center justify-between gap-site">
       <SiteMenu @open="menuActive = true" @close="menuActive = false" />
       <SiteLanguages class="relative z-1100" />
