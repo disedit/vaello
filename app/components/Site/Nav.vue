@@ -38,7 +38,7 @@ const closeMobileMenu = () => {
 <template>
   <nav
     class="fixed top-0 left-0 right-0 p-site flex flex-col lg:flex-row lg:items-center lg:justify-between gap-site z-1000 transition duration-500 ease-out"
-    :class="{ '-translate-y-full': !showNavbar && navCanHide, 'bg-white': isScrolled || isMobile }"
+    :class="{ '-translate-y-full': !showNavbar && navCanHide, 'bg-white': isScrolled }"
   >
     <div
       class="relative z-1100 flex items-center gap-site justify-between transition-colors duration-500 ease-out"
