@@ -36,7 +36,7 @@ const toggle = async () => {
         {{ expanded ? '[ - ]' : '[ + ]' }}
       </button>
     </div>
-    <div :id="`expandable-${blok._uid}`" class="grid grid-cols-3 lg:grid-cols-6 grid-flow-dense gap-2 lg:gap-4 -mx-site">
+    <div :id="`expandable-${blok._uid}`" class="grid grid-cols-3 lg:grid-cols-6 grid-flow-dense gap-2 lg:gap-4 -mx-site lg:mx-0">
       <StoryblokComponent
         v-for="component in blok.blocks"
         :key="component._uid"

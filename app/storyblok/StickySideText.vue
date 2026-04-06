@@ -5,7 +5,7 @@ const props = defineProps({ blok: Object })
 <template>
   <section
     v-editable="blok"
-    class="p-site pt-0 grid lg:grid-cols-2 gap-4 lg:gap-site"
+    class="px-site pt-0 grid lg:grid-cols-2 gap-4 lg:gap-site"
   >
     <div class="bento grid grid-cols-2 gap-2 lg:gap-site col-1 row-2 lg:col-auto lg:row-auto">
       <UtilsMedia

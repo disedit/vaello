@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: Pretendard, sans-serif;
-  --font-serif: Louize, Georgia, serif;
+  --font-sans: "Helvetica Now Display", sans-serif;
   --color-black: #000;
   --color-white: #fff;
   --color-gray-50: #f2f2f2;

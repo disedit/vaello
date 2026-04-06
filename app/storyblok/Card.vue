@@ -41,11 +41,11 @@ const tag = computed(() => props.blok.link ? resolveComponent('NuxtLink') : 'art
       v-if="blok.heading || blok.description"
       class="flex-col gap-2 text-xs lg:text-sm 2xl:text-smbase"
       :class="{
-        'hidden lg:flex mb-6': hideHeadingOnMobile,
-        'flex p-8 lg:p-0': !hideHeadingOnMobile
+        'hidden lg:flex mb-8': hideHeadingOnMobile,
+        'flex p-8 lg:p-0 lg:mb-8': !hideHeadingOnMobile
       }"
     >
-      <h3 v-if="blok.heading" class="leading-none -mt-1">
+      <h3 v-if="blok.heading" class="leading-none">
         {{ blok.heading }}
       </h3>
       <p v-if="blok.description" class="text-justify">
