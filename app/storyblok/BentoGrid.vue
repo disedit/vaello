@@ -18,7 +18,7 @@ const toggle = async () => {
 <template>
   <section
     v-editable="blok"
-    class="p-site grid gap-4 lg:mt-6"
+    class="px-site grid gap-4 lg:mt-6"
   >
     <div class="grid grid-cols-3 lg:grid-cols-6 gap-4 text-xxs lg:text-sm leading-none">
       <h2 class="col-span-2">
