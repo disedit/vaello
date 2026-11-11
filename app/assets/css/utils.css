@@ -137,3 +137,32 @@
     }
   }
 }
+
+/*
+  Freeze effect: when a .freezable block is followed by a StickyCenteredText,
+  the block stops moving once its end reaches the bottom of the screen and the
+  text slides up over it.
+  - a 100vh spacer sits above .freezable-inner;
+  - .freezable-inner is sticky to the bottom, so it is pulled up over the
+    spacer until its own bottom hits the bottom of the screen, then stays
+    still for 100vh of scroll;
+  - the StickyCenteredText is pulled up by the same 100vh so it covers the
+    block while it is still.
+*/
+@layer components {
+  .freezable:has(+ .sticky-centered-text)::before {
+    content: "";
+    display: block;
+    min-height: 100vh;
+  }
+
+  .freezable:has(+ .sticky-centered-text) > .freezable-inner {
+    position: sticky;
+    bottom: 0;
+  }
+
+  .freezable + .sticky-centered-text {
+    z-index: 10;
+    margin-top: -100vh;
+  }
+}

@@ -22,6 +22,14 @@ const tag = computed(() => props.blok.link ? resolveComponent('NuxtLink') : 'art
         class="object-cover h-full w-full aspect-[0.66]"
         :class="{ 'grayscale': blok.grayscale }"
       />
+      <UtilsMedia
+        v-if="blok.media_hover?.filename"
+        :media="blok.media_hover"
+        :sizes="sizes"
+        aria-hidden="true"
+        class="absolute inset-0 object-cover h-full w-full opacity-0 group-hover:opacity-100"
+        :class="{ 'grayscale': blok.grayscale }"
+      />
       <div
         v-if="blok.text"
         class="absolute text-xxs lg:text-sm p-site"

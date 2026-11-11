@@ -8,7 +8,7 @@ const popoverId = `popover-${props.blok._uid}`
   <Component
     v-editable="blok"
     :is="tag"
-    class="group flex flex-col gap-site text-left"
+    class="bento-card group flex flex-col gap-site text-left"
     :class="[
       `text-color-${blok.text_color}`,
       `background-color-${blok.background_color}`,
@@ -67,6 +67,10 @@ const popoverId = `popover-${props.blok._uid}`
 </template>
 
 <style scoped>
+:root:has([popover]:popover-open) .bento-card {
+  pointer-events: none;
+}
+
 [popover] {
   opacity: 0;
   transform: translate(-50%, calc(-50% + 0.75rem));
