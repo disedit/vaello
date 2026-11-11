@@ -13,12 +13,12 @@ defineProps({ blok: Object })
         <a :href="`tel:${blok.tel}`" class="flex items-center gap-1 border border-gray-200 px-3 lg:px-7 py-1 h-8 lg:h-10 row-1 col-1 w-fit">
           <strong>ES</strong> {{ blok.tel_nice }}
         </a>
-        <a :href="blok.instagram" class="flex items-center gap-2 border border-gray-200 px-3 lg:px-7 font-bold h-8 lg:h-10 row-1 col-2 w-fit">
-          <IconsInstagram class="h-[2.5em] lg:h-[3em] w-auto" />
+        <a :href="blok.instagram" class="flex items-center gap-3 border border-gray-200 px-3 lg:px-6 font-bold h-8 lg:h-10 row-1 col-2 w-fit">
+          <IconsInstagram class="h-[2em] w-auto" />
           Instagram
         </a>
-        <a :href="`https://wa.me/${blok.whatsapp}`" class="flex items-center gap-2 border border-gray-200 px-3 lg:px-7 font-bold h-8 lg:h-10 row-2 col-2 w-fit">
-          <IconsWhatsapp class="h-[2.5em] lg:h-[3em] w-auto" />
+        <a :href="`https://wa.me/${blok.whatsapp}`" class="flex items-center gap-3 border border-gray-200 px-3 lg:px-6 font-bold h-8 lg:h-10 row-2 col-2 w-fit">
+          <IconsWhatsapp class="h-[2em] w-auto" />
           Whatsapp
         </a>
         <a :href="`mailto:${blok.email}`" class="flex items-center gap-2 border border-gray-200 px-3 lg:px-7 h-8 lg:h-10 row-2 col-1 w-fit">

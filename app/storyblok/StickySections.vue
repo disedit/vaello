@@ -8,7 +8,8 @@ const props = defineProps({ blok: Object })
       v-for="(component, i) in blok.sections"
       :key="component._uid"
       :blok="component"
-      :first="i === 0"
+      :index="i"
+      :total="blok.sections.length"
     />
   </section>
 </template>

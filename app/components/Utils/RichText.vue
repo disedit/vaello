@@ -8,6 +8,6 @@ defineProps({
 
 <template>
   <Component :is="tag" :class="['prose', { 'spaced-paragraphs': spacedParagraphs }]">
-    <StoryblokRichText :doc="content" />
+    <StoryblokRichText :document="content" />
   </Component>
 </template>

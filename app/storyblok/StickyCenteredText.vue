@@ -4,7 +4,7 @@ const props = defineProps({ blok: Object })
 
 <template>
   <section v-editable="blok" class="relative isolate">
-    <div class="sticky top-[20vh] bento-text p-10 lg:p-24 z-110">
+    <div class="sticky top-[20vh] bento-text py-20 p-10 lg:p-24 z-110">
       <UtilsRichText
         :content="blok.text"
         spaced-paragraphs
