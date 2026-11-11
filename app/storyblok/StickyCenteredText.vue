@@ -3,8 +3,8 @@ const props = defineProps({ blok: Object })
 </script>
 
 <template>
-  <section v-editable="blok" class="relative isolate">
-    <div class="sticky top-[20vh] bento-text py-20 p-10 lg:p-24 z-110">
+  <section v-editable="blok" class="sticky-centered-text relative isolate bg-white min-h-dvh">
+    <div class="relative bento-text py-20 p-10 lg:p-24 z-110">
       <UtilsRichText
         :content="blok.text"
         spaced-paragraphs
