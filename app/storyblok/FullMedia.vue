@@ -1,10 +1,11 @@
 <script setup>
 const props = defineProps({ blok: Object })
+const { inner, freezeStyle } = useFreezable()
 </script>
 
 <template>
-  <section v-editable="blok" class="freezable">
-    <div class="freezable-inner">
+  <section v-editable="blok" class="freezable" :style="freezeStyle">
+    <div ref="inner" class="freezable-inner">
       <UtilsMedia
         :media="blok.media"
         sizes="1500px"

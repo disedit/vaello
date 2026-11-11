@@ -145,24 +145,59 @@
   - a 100vh spacer sits above .freezable-inner;
   - .freezable-inner is sticky to the bottom, so it is pulled up over the
     spacer until its own bottom hits the bottom of the screen, then stays
-    still for 100vh of scroll;
-  - the StickyCenteredText is pulled up by the same 100vh so it covers the
-    block while it is still.
+    still for 100vh of scroll while the text covers it (if the block already
+    ends above the bottom of the first screen, --freeze-bottom, set by
+    useFreezable(), keeps it where it is);
+  - the block's negative bottom margin cancels the spacer, so the text starts
+    right below the block.
 */
 @layer components {
-  .freezable:has(+ .sticky-centered-text)::before {
-    content: "";
-    display: block;
-    min-height: 100vh;
-  }
+  .freezable:has(+ .sticky-centered-text) {
+    margin-bottom: -100vh;
 
-  .freezable:has(+ .sticky-centered-text) > .freezable-inner {
-    position: sticky;
-    bottom: 0;
+    &::before {
+      content: "";
+      display: block;
+      height: 100vh;
+    }
+
+    & > .freezable-inner {
+      position: sticky;
+      bottom: var(--freeze-bottom, 0px);
+    }
   }
 
   .freezable + .sticky-centered-text {
     z-index: 10;
-    margin-top: -100vh;
+  }
+}
+
+/*
+  Spacing between page blocks (children of <main>). Padding instead of a flex
+  gap, so blocks with a background also cover the space between them (a gap
+  is see-through, so frozen blocks showed through it).
+  Half the spacing on each side; none above the first block or below the last.
+*/
+@layer components {
+  .page-blocks {
+    --page-gap: var(--spacing-site);
+
+    @media (width >= 64rem) {
+      --page-gap: calc(var(--spacing) * 4);
+    }
+
+    & > * {
+      padding-block: calc(var(--page-gap) / 2);
+    }
+
+    /* The first child is the visually hidden <h1> */
+    & > :first-child,
+    & > .sr-only + * {
+      padding-top: 0;
+    }
+
+    & > :last-child {
+      padding-bottom: 0;
+    }
   }
 }

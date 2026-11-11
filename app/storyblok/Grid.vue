@@ -11,7 +11,7 @@ const sizes = {
 <template>
   <section
     v-editable="blok"
-    class="grid gap-2 lg:gap-4"
+    class="relative z-10 grid gap-2 lg:gap-4 bg-white"
     :class="{
       'lg:grid-cols-2': blok.max_columns == 2,
       'lg:grid-cols-3': blok.max_columns == 3,

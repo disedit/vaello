@@ -1,10 +1,11 @@
 <script setup>
 const props = defineProps({ blok: Object })
+const { inner, freezeStyle } = useFreezable()
 </script>
 
 <template>
-  <section v-editable="blok" class="freezable">
-    <div class="freezable-inner px-site pt-0 grid lg:grid-cols-2 gap-4 lg:gap-site">
+  <section v-editable="blok" class="freezable" :style="freezeStyle">
+    <div ref="inner" class="freezable-inner px-site pt-0 grid lg:grid-cols-2 gap-4 lg:gap-site">
       <div class="bento grid grid-cols-2 gap-2 lg:gap-site col-1 row-2 lg:col-auto lg:row-auto">
         <UtilsMedia
           v-for="media in blok.media"

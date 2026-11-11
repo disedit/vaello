@@ -20,14 +20,16 @@ const toggle = async () => {
     await nextTick()
   })
 }
+const { inner, freezeStyle } = useFreezable()
 </script>
 
 <template>
   <section
     v-editable="blok"
     class="freezable lg:mt-6"
+    :style="freezeStyle"
   >
-    <div class="freezable-inner px-site grid gap-4">
+    <div ref="inner" class="freezable-inner px-site grid gap-4 pb-site">
       <div class="grid grid-cols-3 lg:grid-cols-6 gap-4 text-xxs lg:text-sm leading-none">
         <h2 class="col-span-2">
           {{ blok.heading1 }}

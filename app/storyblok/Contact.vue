@@ -3,8 +3,8 @@ defineProps({ blok: Object })
 </script>
 
 <template>
-  <section v-editable="blok" class="contact flex min-h-[calc(100svh-var(--spacing-nav)-4rem)] items-center justify-center p-site">
-    <div class="px-11 lg:px-0">
+  <section v-editable="blok" class="contact flex min-h-[calc(100svh-var(--spacing-nav)-4rem)] items-center justify-center px-site">
+    <div class="px-11 lg:px-0 py-site">
       <div class="grid md:grid-cols-2 max-w-236 mx-auto gap-18 lg:gap-12">
         <UtilsRichText :content="blok.column1" spaced-paragraphs class="links-underlined text-xs lg:text-smbase leading-tight" />
         <UtilsRichText :content="blok.column2" spaced-paragraphs class="links-underlined text-xs lg:text-smbase leading-tight" />

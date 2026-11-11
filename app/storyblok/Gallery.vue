@@ -5,9 +5,9 @@ const props = defineProps({ blok: Object })
 <template>
   <section
     v-editable="blok"
-    class="lg:px-site lg:py-30"
+    class="relative z-10 lg:px-site bg-white"
   >
-    <div class="grid grid-cols-2 gap-2 lg:gap-6 max-w-200 mx-auto">
+    <div class="grid grid-cols-2 gap-2 lg:gap-6 max-w-200 mx-auto lg:py-30">
       <UtilsMedia
         v-for="media in blok.media"
         :key="media._uid"

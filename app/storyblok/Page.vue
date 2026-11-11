@@ -11,7 +11,7 @@ useHead({
 <template>
   <main
     v-editable="blok"
-    class="flex flex-col gap-2 lg:gap-4 min-h-[calc(100svh-var(--spacing-nav)-20rem)] pb-1"
+    class="page-blocks flex flex-col min-h-[calc(100svh-var(--spacing-nav)-20rem)] pb-1"
     :class="{
       'lg:pt-nav': blok.nav_padding,
       'pt-nav': blok.nav_padding_mobile,
