@@ -1,6 +1,6 @@
 <script setup>
 const settings = await useSettings()
-const global = settings?.value?.data?.story?.content
+const global = computed(() => settings.value?.data?.story?.content)
 const { internalLink, target } = useLinks()
 </script>
 

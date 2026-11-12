@@ -4,7 +4,7 @@ defineProps({ show: Boolean })
 const emit = defineEmits(['close'])
 
 const settings = await useSettings()
-const global = settings?.value?.data?.story?.content
+const global = computed(() => settings.value?.data?.story?.content)
 const { internalLink, target } = useLinks()
 
 const submenu = ref(null)

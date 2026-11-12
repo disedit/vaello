@@ -1,10 +1,13 @@
 export const useSettings = async () => {
-  const nuxtApp = useNuxtApp();
   const version = useEnvironment();
   const { locale } = useI18n();
   const storyblokApi = useStoryblokApi();
+
+  // The key includes the locale, so each language gets its own cache entry.
+  // When the locale changes, the key changes and Nuxt fetches that language's
+  // settings (or reuses them if they were already loaded).
   const { data: settings } = await useAsyncData(
-    "settings",
+    () => `settings-${locale.value}`,
     async () => {
       return await storyblokApi.get("cdn/stories/settings", {
         version,
@@ -14,12 +17,11 @@ export const useSettings = async () => {
     },
     {
       dedupe: "defer",
-      getCachedData(key) {
+      getCachedData(key, nuxtApp) {
         return nuxtApp.isHydrating
           ? nuxtApp.payload.data[key]
-          : nuxtApp.static.data[key];
+          : nuxtApp.payload.data[key] ?? nuxtApp.static.data[key];
       },
-      watch: [locale],
     },
   );
 
